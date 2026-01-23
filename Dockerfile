@@ -23,8 +23,13 @@ RUN npm install -g @anthropic-ai/claude-code
 # Create a workspace
 WORKDIR /workspace
 
-# Run as non-root for safety
-USER node
+# Bun (via npm, per Bun v1.3.6 docs)
+RUN npm install -g bun
+
+# ralph-tui (via bun)
+RUN bun install -g ralph-tui
+
+USER root
 
 # Nice defaults when you "docker run -it ..."
 CMD ["bash"]
