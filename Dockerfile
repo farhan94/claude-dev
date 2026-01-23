@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     less \
     tmux \
     gh \
+    vim \
   && rm -rf /var/lib/apt/lists/*
 
 # Install Claude Code globally
