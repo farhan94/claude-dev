@@ -35,5 +35,6 @@ USER root
 ENV TERM=xterm-256color
 ENV PS1="\[\e[1;36m\]\u@\h\[\e[0m\]:\[\e[1;35m\]\w\[\e[0m\]\$ "
 
+RUN printf '\nexport TERM=xterm-256color\nexport PS1="\\[\\e[1;36m\\]\\u@\\h\\[\\e[0m\\]:\\[\\e[1;35m\\]\\w\\[\\e[0m\\]\\$ "\n' >> /etc/bash.bashrc
 # Nice defaults when you "docker run -it ..."
 CMD ["bash"]
