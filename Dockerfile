@@ -29,7 +29,11 @@ RUN npm install -g bun
 # ralph-tui (via bun)
 RUN bun install -g ralph-tui
 
+#unnecessary but might as well:
 USER root
+
+ENV TERM=xterm-256color
+ENV PS1="\[\e[1;36m\]\u@\h\[\e[0m\]:\[\e[1;35m\]\w\[\e[0m\]\$ "
 
 # Nice defaults when you "docker run -it ..."
 CMD ["bash"]
